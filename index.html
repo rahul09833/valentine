@@ -10,18 +10,22 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #ffe6e6;
+            /* Changing pink to a nature aesthetic */
+            background: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
             font-family: 'Arial', sans-serif;
             overflow: hidden;
             text-align: center;
+            margin: 0;
         }
         .container {
-            background: white;
+            background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
             padding: 50px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px); /* Makes it look premium */
         }
-        h1 { color: #ff4d6d; }
+        h1 { color: #2d5a27; } /* Natural green text */
         .buttons {
             margin-top: 30px;
             display: flex;
@@ -36,14 +40,14 @@
             cursor: pointer;
             transition: 0.3s;
         }
-        #yesBtn { background-color: #ff4d6d; color: white; }
+        #yesBtn { background-color: #4CAF50; color: white; }
         #noBtn { background-color: #ccc; color: #333; position: absolute; }
     </style>
 </head>
 <body>
 
     <div class="container" id="mainCard">
-        <h1 id="question">komal, will you be my Valentine? ❤️</h1>
+        <h1 id="question">Will you be my Valentine? ❤️</h1>
         <div class="buttons">
             <button id="yesBtn">Yes</button>
             <button id="noBtn">No</button>
@@ -53,7 +57,6 @@
     <script>
         const noBtn = document.getElementById('noBtn');
         const yesBtn = document.getElementById('yesBtn');
-        const question = document.getElementById('question');
         const mainCard = document.getElementById('mainCard');
 
         // The "Runaway" No Button Logic
@@ -64,12 +67,12 @@
             noBtn.style.top = `${y}px`;
         });
 
-        // The "Yes" Click Logic
+        // The "Yes" Click Logic with Happy GIF
         yesBtn.addEventListener('click', () => {
             mainCard.innerHTML = `
-                <h1>YAY! 🎉</h1>
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpwaGZ4ZzB4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/l41lTfuxV5F6Ksc1O/giphy.gif" width="300">
-                <p>Can't wait!</p>
+                <h1 style="color: #ff4d6d;">YAY! I KNEW IT! 🥰</h1>
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZleW1ueGZ6bmZueGZ6bmZueGZ6bmZueGZ6bmZueGZ6bmZueGZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/TS9p8H4VIBz2/giphy.gif" width="300" style="border-radius: 15px; margin-top: 20px;">
+                <p style="font-size: 1.2rem; margin-top: 15px;">You made my day!</p>
             `;
         });
     </script>
